@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32427.441
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConcat", "VideoConcat\VideoConcat.csproj", "{715D22D2-B27D-48CC-AFA7-D0358011E547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{715D22D2-B27D-48CC-AFA7-D0358011E547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715D22D2-B27D-48CC-AFA7-D0358011E547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715D22D2-B27D-48CC-AFA7-D0358011E547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715D22D2-B27D-48CC-AFA7-D0358011E547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96C6DBED-33D5-4290-B041-CE9EE47F390B}
+	EndGlobalSection
+EndGlobal
