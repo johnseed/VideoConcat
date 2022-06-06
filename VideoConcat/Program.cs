@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using X.Common.Helper;
 
-DirectoryInfo directory = new(@"path");
+DirectoryInfo directory = new(Environment.CurrentDirectory);
 
 List<Stream> GetStreams(string fileName)
 {
@@ -33,4 +33,6 @@ for (int i = 0; i < count; i++)
 }
 sb.Append($"concat=n={count}:v=1:a=1[outv][outa]\" -map \"[outv]\" -map \"[outa]\" output.mp4");
 string command = sb.ToString();
-Console.WriteLine("Hello, World!");
+Console.WriteLine(command);
+//Console.WriteLine("Hello, World!");
+Console.ReadLine();
