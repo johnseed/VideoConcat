@@ -9,7 +9,8 @@ DirectoryInfo directory = new(Environment.CurrentDirectory);
 
 List<Stream> GetStreams(string fileName)
 {
-    string raw = CommandHelper.ExecuteCommand(directory.FullName, $"ffprobe -i  \"{fileName}\" -select_streams v  -show_streams  -print_format json");
+    string raw = CommandHelper.ExecuteCommand(directory.FullName, $"ffprobe -i \"{fileName}\" -select_streams v -show_streams -print_format json");
+    // string raw = CommandHelper.Execute(directory.FullName, $"ffprobe", $" -i  \"{fileName}\" -select_streams v -show_streams -print_format json");
     Regex jsonRegex = new(@"{[\w\W]+}");
 
     string json = jsonRegex.Match(raw).Value;
@@ -25,7 +26,7 @@ var kinds = fileStreamInfos.SelectMany(x => x.ToList()).GroupBy(x => x.Res).Sele
 var seq = fileStreamInfos.Select(x => x.Select(y => y.Res).ToList()).Select(x => x.IndexOf(kinds[0])).ToList();
 
 string fileList = string.Join(" -i ", files.Select(x => x.Name));
-StringBuilder sb = new($"ffmpeg -i {fileList} -vcodec h264_nvenc  -filter_complex \"");
+StringBuilder sb = new($"ffmpeg -i {fileList} -vcodec h264_nvenc  -filter_complex \""); // Intel GPU use h264_qsv
 
 for (int i = 0; i < count; i++)
 {

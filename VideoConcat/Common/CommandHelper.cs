@@ -90,7 +90,7 @@ namespace X.Common.Helper
         }
 
         // https://stackoverflow.com/questions/40764172/how-asp-net-core-execute-linux-shell-command
-        public static string Execute(string command, string args)
+        public static string Execute(string workingDirectory, string command, string args)
         {
             var process = new Process
             {
@@ -102,6 +102,7 @@ namespace X.Common.Helper
                     RedirectStandardError = true,
                     UseShellExecute = false,
                     CreateNoWindow = true,
+                    WorkingDirectory = workingDirectory
                 }
             };
             process.Start();
